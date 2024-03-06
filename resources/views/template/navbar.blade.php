@@ -33,7 +33,14 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li>
+                            <form action="/login/logout" method="POST">
+                                @csrf
+                                <button class="dropdown-item" type="submit">
+                                    Sign out
+                                </button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             @else
