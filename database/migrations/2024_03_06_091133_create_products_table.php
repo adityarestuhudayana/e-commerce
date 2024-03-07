@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->string('slug')->unique();
             $table->integer('harga');
-            $table->text('keterangan');
+            $table->text('keterangan')->nullable();
             $table->text('exerpt');
             $table->text('gambar');
             $table->timestamps();

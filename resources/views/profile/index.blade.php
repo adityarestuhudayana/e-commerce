@@ -3,6 +3,12 @@
 @section('container')
     <div class=" bg-light d-flex justify-content-center flex-column align-items-center">
 
+        @if (session('addProdukSuccess'))
+            <div class="alert alert-info" role="alert">
+                {{ session('addProdukSuccess') }}
+            </div>
+        @endif
+
         <div class="col-md-5">
             <div class="img-profile text-center my-4">
                 <img src="img/profile.png" alt="" width="200" height="200"
@@ -13,15 +19,13 @@
             <form>
                 <div class="mb-3">
                     <label for="exampleInputUsername1" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="exampleInputUsername1">
+                    <input type="text" class="form-control" id="exampleInputUsername1"
+                        value="{{ auth()->user()->username }}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputAlamat1" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="exampleInputAlamat1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="text" class="form-control" id="exampleInputAlamat1"
+                        value="{{ auth()->user()->alamat }}">
                 </div>
             </form>
             <br>

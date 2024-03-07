@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_produk' => 'required',
+            'harga' => 'required',
+        ]);
+
+        $validatedData['slug'] = explode(' ', $validatedData['nama_produk']);
+        $validatedData['slug'] = implode('-', $validatedData['slug']);
+
+        $validatedData['keterangan'] = $request->keterangan;
+
+        if ($validatedData['keterangan']) {
+            $validatedData['exerpt'] = Str::limit($validatedData['keterangan'], 20);
+        } else {
+            $validatedData['exerpt'] = 'Tidak ada';
+        }
+
+        $validatedData['gambar'] = $request->file('gambar')->store('images');
+
+
+        Product::create($validatedData);
+
+        return redirect('/profile')->with('addProdukSuccess', 'Berhasil membuat barang jual');
     }
 
     /**
