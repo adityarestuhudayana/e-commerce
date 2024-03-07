@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->text('keterangan');
             $table->text('exerpt');
+            $table->text('gambar');
             $table->timestamps();
         });
     }

@@ -28,16 +28,17 @@ class LoginController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/login');
+        return redirect('/login')->with('regisSuccess', 'Registrasi akun berhasil');
     }
 
-    public function auth(Request $request) {
+    public function auth(Request $request)
+    {
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('products');
@@ -46,17 +47,19 @@ class LoginController extends Controller
         return back()->with('loginFailed', 'Email atau password mungkin salah');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();
-        
+
         $request->session()->regenerateToken();
 
         return redirect('/');
     }
 
-    public function profile() {
+    public function profile()
+    {
         return view('profile.index');
     }
 }

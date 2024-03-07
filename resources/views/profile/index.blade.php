@@ -10,7 +10,6 @@
             </div>
 
             <a href="#" class="btn btn-success mb-3"><i class="bi bi-box-arrow-down me-2"></i>Simpan</a>
-
             <form>
                 <div class="mb-3">
                     <label for="exampleInputUsername1" class="form-label">Username</label>
@@ -34,17 +33,21 @@
 
         <p class="btn btn-info text-white"><i class="bi bi-cart-fill me-2"></i>Barang kamu</p>
         <a href="/products/create" class="btn btn-primary mb-3"><i class="bi bi-plus-lg me-2"></i>Buat barang jual</a>
-        <div class="col-md-4 mb-2">
-            <div class="card">
-                <img src="img/shopping.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <hr>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <a href="#" class="btn btn-danger">Hapus</a>
+        <div class="row d-flex justify-content-center flex-wrap">
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <img src="img/shopping.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <hr>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's
+                            content.</p>
+                        <div class="row">
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

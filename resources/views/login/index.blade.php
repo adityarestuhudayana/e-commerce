@@ -8,6 +8,12 @@
                     {{ session('loginFailed') }}
                 </div>
             @endif
+
+            @if (session('regisSuccess'))
+                <div class="alert alert-info" role="alert">
+                    {{ session('regisSuccess') }}
+                </div>
+            @endif
             <form action="/login/auth" method="post">
                 @csrf
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
