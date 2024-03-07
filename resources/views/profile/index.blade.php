@@ -9,7 +9,7 @@
                     class="img-fluid img-thumbnail rounded-circle">
             </div>
 
-            <a href="#" class="btn btn-success mb-3">Simpan</a>
+            <a href="#" class="btn btn-success mb-3"><i class="bi bi-box-arrow-down me-2"></i>Simpan</a>
 
             <form>
                 <div class="mb-3">
@@ -32,7 +32,8 @@
 
 
 
-        <p class="btn btn-info text-white">Barang kamu</p>
+        <p class="btn btn-info text-white"><i class="bi bi-cart-fill me-2"></i>Barang kamu</p>
+        <a href="/products/create" class="btn btn-primary mb-3"><i class="bi bi-plus-lg me-2"></i>Buat barang jual</a>
         <div class="col-md-4 mb-2">
             <div class="card">
                 <img src="img/shopping.png" class="card-img-top" alt="...">
