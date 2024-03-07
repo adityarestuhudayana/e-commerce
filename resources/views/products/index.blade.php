@@ -34,6 +34,7 @@
                     </div>
                 </div>
             @endforeach
+
         </div>
     @else
         <h3 class="text-center">Belum ada produk</h3>

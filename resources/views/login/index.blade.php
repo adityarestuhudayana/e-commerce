@@ -3,6 +3,11 @@
 @section('container')
     <div class="row d-flex justify-content-center mt-5 text-center">
         <div class="col-md-4">
+            @if (session('loginFailed'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('loginFailed') }}
+                </div>
+            @endif
             <form action="/login/auth" method="post">
                 @csrf
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>

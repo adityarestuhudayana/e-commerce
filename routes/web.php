@@ -24,8 +24,9 @@ Route::resource('/products', ProductController::class)->middleware('auth');
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login');
     Route::post('/auth', [LoginController::class, 'auth']);
-    Route::post('/logout', [LoginController::class, 'logout']);
+    Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 });
+Route::get('/profile', [LoginController::class, 'profile'])->middleware('auth');
 
 Route::prefix('register')->group(function () {
     Route::get('/', [LoginController::class, 'register']);

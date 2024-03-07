@@ -15,8 +15,10 @@
     {{-- Navbar --}}
     @include('template.navbar')
 
-    <div class="container">
-        @yield('container')
+    <div class="container d-flex flex-column align-items-center">
+        <div class="col-md-10">
+            @yield('container')
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
