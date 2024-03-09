@@ -40,6 +40,7 @@ class ProductController extends Controller
         $validatedData['slug'] = implode('-', $validatedData['slug']);
 
         $validatedData['keterangan'] = $request->keterangan;
+        $validatedData['user_id'] = $request->user_id;
 
         if ($validatedData['keterangan']) {
             $validatedData['exerpt'] = Str::limit($validatedData['keterangan'], 20);

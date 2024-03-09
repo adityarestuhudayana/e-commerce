@@ -61,6 +61,8 @@ class LoginController extends Controller
 
     public function profile()
     {
-        return view('profile.index');
+        return view('profile.index', [
+            
+        ]);
     }
 }

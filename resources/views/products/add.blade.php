@@ -5,6 +5,7 @@
     <hr>
     <form action="/products" method="post" enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         <div class="mb-3">
             <label for="exampleInputNameBRG1" class="form-label">Nama produk</label>
             <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="exampleInputNameBRG1" name="nama_produk" placeholder="Nama produk"
